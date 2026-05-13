@@ -74,9 +74,10 @@ a { color: inherit; }
 html[data-theme='light'] .header { background: rgba(255, 255, 255, 0.55); }
 .header-inner { display: flex; align-items: center; justify-content: space-between; min-height: 68px; gap: 14px; }
 
-.brand { display: inline-flex; align-items: center; gap: 10px; border: 0; background: transparent; cursor: pointer; padding: 10px 0; color: var(--text-strong); }
+.brand { display: inline-flex; align-items: center; gap: 10px; border: 0; background: transparent; cursor: pointer; padding: 0; color: var(--text-strong); }
 .brand-text { font-weight: 700; letter-spacing: 0.2px; }
 .brand-dot { width: 10px; height: 10px; border-radius: 999px; background: radial-gradient(circle at 30% 30%, var(--primary-2), var(--primary)); box-shadow: 0 0 22px rgba(34, 211, 238, 0.45); }
+.brand-logo { height: 70px; width: auto; display: block; flex-shrink: 0; }
 .pill { display: inline-flex; align-items: center; gap: 6px; font-size: 12px; padding: 6px 10px; border-radius: 999px; border: 1px solid rgba(34, 211, 238, 0.35); background: rgba(34, 211, 238, 0.12); color: var(--text-strong); }
 
 .nav { display: none; gap: 10px; }

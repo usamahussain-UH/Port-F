@@ -22,11 +22,9 @@ export default function Header({ theme, setTheme }: Props) {
     <header className="header">
       <div className="container header-inner">
         <button className="brand" onClick={() => scrollToId('top')} type="button">
-          <span className="brand-dot" />
-          <span className="brand-text">Usama AI/ML Futuristic  </span>
-          <span className="pill">
-            <Sparkles size={14} /> Live
-          </span>
+          <Sparkles size={14} />
+          <span className="brand-text">Usama AI/ML   </span>
+          
         </button>
 
         <nav className="nav">
