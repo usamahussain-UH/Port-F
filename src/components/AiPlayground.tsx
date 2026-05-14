@@ -10,7 +10,7 @@ function uid() {
 
 function demoBrain(prompt: string) {
   const p = prompt.trim().toLowerCase()
-  if (!p) return 'Ask me anything—projects, skills, or how this portfolio was built.'
+  if (!p) return 'Ask me anything about projects, skills, or how this portfolio was built.'
   if (p.includes('project'))
     return 'Projects: AI Resume Analyzer • Neural Notes • Smart Portfolio Assistant. Want a detailed breakdown of one?'
   if (p.includes('tech') || p.includes('stack'))

@@ -12,16 +12,16 @@ export default function AiSection() {
       </div>
       <div className="grid-2">
         <AiPlayground />
-        <div className="card glass">
-          <div className="card-title">Other "Live Things"</div>
-          <div className="muted">
-            Status, animated background, dynamic cards, and interactive panels—more live modules (visitor stats,
-            mini-visualizers) will be added.
+        <div className="card glass" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: 12, minHeight: 180 }}>
+          <div style={{ fontSize: 36 }}>🚧</div>
+          <div className="card-title" style={{ margin: 0 }}>Coming Soon</div>
+          <div className="muted" style={{ textAlign: 'center', fontSize: 13 }}>
+            More live AI modules are on the way: voice interface, code explainer, real-time tools and more.
           </div>
-          <div className="chip-row">
-            <span className="chip">Particles</span>
-            <span className="chip">Scanlines</span>
-            <span className="chip">Glow</span>
+          <div className="chip-row" style={{ justifyContent: 'center' }}>
+            <span className="chip">Voice</span>
+            <span className="chip">Code Explainer</span>
+            <span className="chip">Real-time Tools</span>
           </div>
         </div>
       </div>

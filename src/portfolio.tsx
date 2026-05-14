@@ -11,9 +11,11 @@ import FunSection from './components/FunSection'
 import EducationSection from './components/EducationSection'
 import AchievementsSection from './components/AchievementsSection'
 import AboutSection from './components/AboutSection'
+import CertificatesSlider from './components/CertificatesSlider'
 import ContactSection from './components/ContactSection'
 import GuestBookSection from './components/GuestBookSection'
 import Footer from './components/Footer'
+import ParticlesBackground from './components/ParticlesBackground'
 
 export default function Portfolio() {
   const [theme, setTheme] = useState<Theme>(() => getInitialTheme())
@@ -26,6 +28,7 @@ export default function Portfolio() {
   return (
     <div className="app">
       <div className="bg">
+        <ParticlesBackground />
         <div className="bg-grid" />
         <div className="bg-orb bg-orb-1" />
         <div className="bg-orb bg-orb-2" />
@@ -39,6 +42,7 @@ export default function Portfolio() {
         <HeroSection theme={theme} onNavigate={scrollToId} />
         <AiSection />
         <ProjectsSection />
+        <CertificatesSlider />
         <CvSection />
         <FunSection />
         <EducationSection />

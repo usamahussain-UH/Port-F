@@ -24,7 +24,7 @@ export default function HeroSection({ theme, onNavigate }: HeroSectionProps) {
         </h1>
         <p className="hero-sub">
           A portfolio designed like a cockpit: interactive LLM playground, fun neural games, achievements,
-          guestbook, and a clean professional profile—wrapped in glass + motion.
+          guestbook, and a clean professional profile, wrapped in glass + motion.
         </p>
         <div className="hero-cta">
           <button className="btn btn-primary" type="button" onClick={() => onNavigate('ai')}>

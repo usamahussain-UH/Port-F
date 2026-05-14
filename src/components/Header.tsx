@@ -1,6 +1,7 @@
-import { Download, Moon, Sparkles, Sun } from 'lucide-react'
+import { Download, Moon, Sun } from 'lucide-react'
 import { useMemo } from 'react'
 import { scrollToId, type Theme } from './utils'
+import ParticlesLogo from './ParticlesLogo'
 
 type Props = {
   theme: Theme
@@ -22,9 +23,8 @@ export default function Header({ theme, setTheme }: Props) {
     <header className="header">
       <div className="container header-inner">
         <button className="brand" onClick={() => scrollToId('top')} type="button">
-          <Sparkles size={14} />
-          <span className="brand-text">Usama AI/ML   </span>
-          
+          <ParticlesLogo />
+          <span className="brand-text">Usama AI/ML</span>
         </button>
 
         <nav className="nav">
@@ -36,7 +36,7 @@ export default function Header({ theme, setTheme }: Props) {
         </nav>
 
         <div className="header-actions">
-          <a className="btn btn-ghost" href="/cv.pdf" download>
+          <a className="btn btn-ghost" href="/Usama_Hussain.docx" download>
             <Download size={16} />
             Download CV
           </a>
