@@ -1,5 +1,4 @@
 import { motion } from 'framer-motion'
-import { Download, Sparkles } from 'lucide-react'
 import clsx from 'clsx'
 
 type Theme = 'dark' | 'light'

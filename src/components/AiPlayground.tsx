@@ -1,5 +1,5 @@
-import { useEffect, useMemo, useRef, useState } from 'react'
-import { Bot, Download, Shield, Send, User } from 'lucide-react'
+import { useMemo, useRef, useState } from 'react'
+import { Bot, Shield, Send, User } from 'lucide-react'
 
 type Role = 'user' | 'assistant'
 type Msg = { id: string; role: Role; content: string }

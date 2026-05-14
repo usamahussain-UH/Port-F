@@ -20,7 +20,7 @@ export default function ParticlesBackground() {
         background: { color: { value: 'transparent' } },
         fpsLimit: 60,
         particles: {
-          number: { value: 72, density: { enable: true, area: 900 } },
+          number: { value: 72 },
           color: { value: ['#8b5cf6', '#22d3ee', '#34d399'] },
           links: {
             enable: true,
