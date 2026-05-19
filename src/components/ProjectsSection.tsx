@@ -93,6 +93,16 @@ const PROJECTS: Project[] = [
     badge: '97.91% Accuracy',
   },
   {
+    emoji: '🩻',
+    category: 'NLP · Healthcare AI',
+    accent: 'linear-gradient(90deg, #06b6d4, #0ea5e9)',
+    title: 'Radiology Report Summarisation',
+    desc: 'Fine-tuned facebook/bart-base on 3,419 cleaned radiology reports (XML dataset of 3,955 files) to auto-generate clinical impressions from findings sections. Seq2SeqTrainer with lr 3e-5, 3 epochs, batch size 4. Achieved ROUGE-1 F1 of 0.6064 on the test set, well above the 0.3 required threshold. Addressed 545 MB model deployment via Git LFS and Railway.',
+    stack: ['Python', 'PyTorch', 'Hugging Face', 'BART', 'Transformers', 'ROUGE', 'XML'],
+    github: null,
+    badge: 'ROUGE-1: 0.6064',
+  },
+  {
     emoji: '🤖',
     category: 'Web Dev · AI',
     accent: 'linear-gradient(90deg, #f97316, #f59e0b)',
@@ -110,7 +120,7 @@ export default function ProjectsSection() {
       <div className="section-head">
         <h2 className="section-title">Projects</h2>
         <p className="section-sub">
-          9 projects spanning MSc AI research, machine learning, data science, and full-stack web.
+          10 projects spanning MSc AI research, NLP, machine learning, data science, and full-stack web.
         </p>
       </div>
 
