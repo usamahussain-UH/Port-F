@@ -39,6 +39,7 @@ html[data-theme='light'] {
 
 body {
   margin: 0;
+  overflow-x: hidden;
   background: radial-gradient(1200px 800px at 10% 10%, rgba(139, 92, 246, 0.22), transparent 60%),
     radial-gradient(900px 700px at 90% 20%, rgba(34, 211, 238, 0.18), transparent 55%),
     radial-gradient(900px 700px at 40% 90%, rgba(16, 185, 129, 0.12), transparent 55%),
@@ -52,6 +53,9 @@ a {
 
 * {
   box-sizing: border-box;
+  overflow-wrap: break-word;
+  word-break: break-word;
+  min-width: 0;
 }
 
 .container {
@@ -84,8 +88,8 @@ a {
 
 .bg-orb {
   position: absolute;
-  width: 520px;
-  height: 520px;
+  width: clamp(200px, 50vw, 520px);
+  height: clamp(200px, 50vw, 520px);
   filter: blur(40px);
   opacity: 0.55;
   border-radius: 999px;
@@ -357,7 +361,7 @@ html[data-theme='light'] .header {
   color: var(--text-strong);
   font-weight: 800;
   margin-bottom: 6px;
-  font-size: 22px;
+  font-size: clamp(15px, 2.5vw, 22px);
 }
 .muted {
   color: var(--muted);
@@ -550,8 +554,7 @@ html[data-theme='light'] .chat {
   margin-top: 12px;
   display: flex;
   flex-wrap: wrap;
-  gap: 22px;
-    justify-content: center;
+  gap: 8px;
 }
 .chip {
   font-size: 12px;
@@ -705,40 +708,73 @@ html[data-theme='light'] .chat {
   flex-wrap: wrap;
 }
 
-@media (min-width: 960px) {
-  .nav {
-    display: flex;
-  }
-}
+/* ── Nav ── */
+@media (min-width: 960px) { .nav { display: flex; } }
 
+/* ── Tablet landscape (≤ 920px) ── */
 @media (max-width: 920px) {
-  .grid-3 {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-  .hero-stats {
-    grid-template-columns: 1fr;
-  }
-    .section{
-    text-align: center;
- 
-  }
+  .grid-3 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .section { padding: 26px 0; }
 }
 
-@media (max-width: 640px) {
-  .grid-2 {
-    grid-template-columns: 1fr;
-  }
-  .grid-3 {
-    grid-template-columns: 1fr;
-  }
-  .header-actions a.btn {
-    display: none;
-  }
+/* ── Tablet portrait (≤ 768px) ── */
+@media (max-width: 768px) {
+  .section { padding: 22px 0; }
+  .section-title { font-size: 20px; }
+  .hero { padding: 28px 0 14px; }
+  .hero-card { padding: 18px; }
+  .footer-inner2 { grid-template-columns: 1fr; }
+  .header-actions a.btn { display: none; }
+}
 
-  .footer-inner2 {
-    grid-template-columns: 1fr;
-  }
-  .section{
-    text-align: center;
-  }
+/* ── Phone landscape (≤ 640px) ── */
+@media (max-width: 640px) {
+  .grid-2 { grid-template-columns: 1fr; }
+  .grid-3 { grid-template-columns: 1fr; }
+  .full-span { grid-column: span 1 !important; }
+  .section { padding: 18px 0; }
+  .hero { padding: 20px 0 10px; }
+  .hero-card { padding: 14px 12px; }
+  .footer-inner2 { grid-template-columns: 1fr; }
+  .footer-bottom { flex-direction: column; align-items: flex-start; gap: 8px; }
+  .chat { height: 220px; }
+}
+
+/* ── Phone portrait (≤ 480px) ── */
+@media (max-width: 480px) {
+  .container { padding: 0 12px; }
+  .header-inner { min-height: 56px; gap: 6px; }
+  .brand-text { font-size: 13px; }
+  .section { padding: 16px 0; }
+  .section-title { font-size: 17px; }
+  .section-sub { font-size: 13px; }
+  .hero { padding: 16px 0 8px; }
+  .hero-card { padding: 12px 10px; }
+  .hero-title { font-size: clamp(22px, 7.5vw, 34px) !important; line-height: 1.15 !important; }
+  .hero-sub { font-size: 13px; }
+  .hero-cta { gap: 8px; }
+  .hero-cta .btn { flex: 1 1 120px; justify-content: center; }
+  .hero-stats { gap: 5px; }
+  .hero-stats .stat { padding: 7px 8px; }
+  .stat-v { font-size: 13px; }
+  .stat-k { font-size: 11px; }
+  .btn { padding: 9px 12px; font-size: 13px; gap: 5px; }
+  .card { padding: 12px; }
+  .card-title { font-size: 15px !important; }
+  .chip { font-size: 11px; padding: 4px 8px; }
+  .chip-row { gap: 6px; }
+  .chat { height: 200px; }
+  .chat-input input { font-size: 13px; padding: 10px 12px; }
+  .seg button { padding: 8px 10px; font-size: 12px; }
+  .footer-social { gap: 6px; }
+  .footer-links { gap: 6px; }
+  .footer-link { font-size: 12px; padding: 7px 10px; }
+  .remark-top { flex-direction: column; gap: 2px; }
+}
+
+/* ── Very small phones (≤ 360px) ── */
+@media (max-width: 360px) {
+  .container { padding: 0 10px; }
+  .brand-text { display: none; }
+  .hero-title { font-size: 21px !important; }
 }

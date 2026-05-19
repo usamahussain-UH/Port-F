@@ -724,7 +724,7 @@ export default function FunZone() {
       <ReactionTester />
       <QuizGame title="Which Developer Are You?" icon={<Code2 size={18} />} questions={DEV_Q} results={DEV_R} tally={devTally} />
       <BirthdayPredictor />
-      <div style={{ gridColumn: 'span 2' }}>
+      <div className="full-span">
         <SiblingReader />
       </div>
     </div>
