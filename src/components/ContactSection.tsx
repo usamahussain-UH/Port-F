@@ -1,14 +1,6 @@
-import { GitFork, LinkIcon, Mail } from 'lucide-react'
+import { GitFork, LinkIcon } from 'lucide-react'
 
 const LINKS = [
-  {
-    icon: <Mail size={20} />,
-    label: 'Email',
-    value: 'usamahussain.org@gmail.com',
-    href: 'mailto:usamahussain.org@gmail.com',
-    color: 'rgba(139,92,246,0.35)',
-    bg: 'rgba(139,92,246,0.08)',
-  },
   {
     icon: <GitFork size={20} />,
     label: 'GitHub',
@@ -40,7 +32,7 @@ export default function ContactSection() {
         <div className="card glass">
           <div className="card-title">Get in Touch</div>
           <div className="muted" style={{ fontSize: 13, marginBottom: 18 }}>
-            The best way to reach me is via email. You can also connect on LinkedIn or explore my work on GitHub.
+            You can connect on LinkedIn or explore my work on GitHub.
           </div>
 
           <div style={{ display: 'grid', gap: 10 }}>
@@ -48,7 +40,7 @@ export default function ContactSection() {
               <a
                 key={l.label}
                 href={l.href}
-                target={l.href.startsWith('mailto') ? undefined : '_blank'}
+                target="_blank"
                 rel="noreferrer"
                 style={{
                   display: 'flex', alignItems: 'center', gap: 14,
@@ -78,7 +70,7 @@ export default function ContactSection() {
         <div className="card glass">
           <div className="card-title">Send a Message</div>
           <div className="muted" style={{ fontSize: 13, marginBottom: 16 }}>
-            Have a project in mind or want to discuss AI/ML? Drop me a message directly via email.
+            Have a project in mind or want to discuss AI/ML? Use the contact form below to reach out.
           </div>
           <div style={{ display: 'grid', gap: 10 }}>
             <div style={{ borderRadius: 12, padding: '12px 14px', border: '1px solid rgba(255,255,255,0.1)', background: 'rgba(255,255,255,0.03)', fontSize: 13, color: 'var(--muted)', lineHeight: 1.7 }}>
@@ -88,13 +80,6 @@ export default function ContactSection() {
               <br />
               💼 Available for: <strong style={{ color: 'var(--text-strong)' }}>AI/ML roles, freelance, collaborations</strong>
             </div>
-            <a
-              className="btn btn-primary"
-              href="mailto:usamahussain.org@gmail.com?subject=Portfolio%20Enquiry"
-              style={{ justifyContent: 'center', textDecoration: 'none' }}
-            >
-              <Mail size={16} /> Email Me Directly
-            </a>
           </div>
         </div>
       </div>

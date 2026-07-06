@@ -1,13 +1,15 @@
-import GuestBook from './GuestBook'
+import ContactForm from './ContactForm'
 
 export default function GuestBookSection() {
   return (
-    <section className="container section" id="guestbook">
+    <section className="container section" id="contact-form">
       <div className="section-head">
-        <h2 className="section-title">Guest Book</h2>
-        <p className="section-sub">Visitors can leave remarks and feedback.</p>
+        <h2 className="section-title">Get in Touch</h2>
+        <p className="section-sub">Send me a message and I'll respond within 24 hours.</p>
       </div>
-      <GuestBook />
+      <div style={{ maxWidth: '600px', margin: '0 auto' }}>
+        <ContactForm />
+      </div>
     </section>
   )
 }

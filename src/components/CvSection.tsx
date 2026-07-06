@@ -49,11 +49,8 @@ export default function CvSection() {
           </div>
 
           <div className="hero-cta">
-            <a className="btn btn-primary" href="/Usama_Hussain.docx" download>
+            <a className="btn btn-primary" href="/Usama_Hussain.docx" download="Usama_Hussain.docx">
               <Download size={16} /> Download CV
-            </a>
-            <a className="btn btn-ghost" href="/Usama_Hussain.docx" target="_blank" rel="noreferrer">
-              Open
             </a>
           </div>
         </div>

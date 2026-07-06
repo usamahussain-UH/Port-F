@@ -4,6 +4,7 @@ import OpenAI from 'openai'
 import { fileURLToPath } from 'url'
 import { dirname, join } from 'path'
 import { existsSync } from 'fs'
+import nodemailer from 'nodemailer'
 
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = dirname(__filename)
@@ -83,6 +84,56 @@ app.post('/api/bias', async (req, res) => {
     })
   } catch (err) {
     res.status(500).json({ error: err instanceof Error ? err.message : 'Unknown error' })
+  }
+})
+
+app.post('/api/contact', async (req, res) => {
+  try {
+    const { name, email, message } = req.body
+
+    if (!name || typeof name !== 'string' || !name.trim()) {
+      res.status(400).json({ error: 'Name is required.' })
+      return
+    }
+    if (!email || typeof email !== 'string' || !email.trim()) {
+      res.status(400).json({ error: 'Email is required.' })
+      return
+    }
+    if (!message || typeof message !== 'string' || !message.trim()) {
+      res.status(400).json({ error: 'Message is required.' })
+      return
+    }
+
+    const recipientEmail = 'usamahussain.org@gmail.com'
+    const emailService = process.env.EMAIL_SERVICE || 'gmail'
+    const emailUser = process.env.EMAIL_USER
+    const emailPass = process.env.EMAIL_PASS
+
+    if (!emailUser || !emailPass) {
+      res.status(500).json({ error: 'Email service not configured.' })
+      return
+    }
+
+    const transporter = nodemailer.createTransport({
+      service: emailService,
+      auth: {
+        user: emailUser,
+        pass: emailPass,
+      },
+    })
+
+    const mailOptions = {
+      from: emailUser,
+      to: recipientEmail,
+      subject: `New Contact Form Submission from ${name}`,
+      text: `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`,
+      html: `<p><strong>Name:</strong> ${name}</p><p><strong>Email:</strong> ${email}</p><p><strong>Message:</strong></p><p>${message.replace(/\n/g, '<br>')}</p>`,
+    }
+
+    await transporter.sendMail(mailOptions)
+    res.json({ success: true, message: 'Email sent successfully.' })
+  } catch (err) {
+    res.status(500).json({ error: err instanceof Error ? err.message : 'Failed to send email.' })
   }
 })
 

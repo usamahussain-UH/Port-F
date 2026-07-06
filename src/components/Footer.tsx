@@ -1,4 +1,4 @@
-import { GitFork, LinkIcon, Mail } from 'lucide-react'
+import { GitFork, LinkIcon } from 'lucide-react'
 import { scrollToId } from './utils'
 
 export default function Footer() {
@@ -16,9 +16,6 @@ export default function Footer() {
           </div>
 
           <div className="footer-social">
-            <a className="btn btn-ghost" href="mailto:usamahussain.org@gmail.com">
-              <Mail size={16} /> Email
-            </a>
             <a className="btn btn-ghost" href="https://github.com/usamahussain-UH" target="_blank" rel="noreferrer">
               <GitFork size={16} /> GitHub
             </a>
